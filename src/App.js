@@ -1,8 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person'
-import Radium from 'radium'
+// import Radium, {StyleRoot} from 'radium'
+import styled from 'styled-components'
+  
+const StyleButton = styled.button`
+  background-color: ${props => props.alt ? 'red' : 'green'};
+  color: white;
+  font: inherit;
+  padding: 8px;
+  cursor: pointer;
+  border: 1px solid blue;
 
+  &:hover {
+    background-color: ${props => props.alt ? 'salmon' : 'lightgreen'};
+    color: black;
+  }
+`;
 
 class App extends Component {  
 
@@ -108,9 +122,9 @@ togglePersonsHandler = () => {
       <div className="App">
         <h1>Hi , I'm a React App</h1>
         <p className={classes.join(' ')}>This is really working</p>
-        <button 
-        style={style}
-        onClick={this.togglePersonsHandler}>Toggle Persons</button>
+        <StyleButton
+        alt={this.state.showPersons}
+        onClick={this.togglePersonsHandler}>Toggle Persons</StyleButton>
         { persons }
       </div>
     );
@@ -118,4 +132,4 @@ togglePersonsHandler = () => {
 }
 
 
-export default Radium( App );
+export default App;

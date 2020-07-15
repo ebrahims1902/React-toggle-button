@@ -9,3 +9,18 @@
 .bold {
   font-weight: bold;
 }
+
+.button {
+  background-color: green;
+  color: white;
+  font: inherit;
+  padding: 8px;
+  cursor: pointer;
+  border: 1px solid blue;
+
+}
+
+.button:hover {
+  background-color: lightgreen;
+  color: black;
+}
