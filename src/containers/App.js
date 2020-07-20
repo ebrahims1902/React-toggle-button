@@ -119,7 +119,7 @@ togglePersonsHandler = () => {
         { this.state.showCockpit ? ( <Cockpit 
           title={this.props.appTitle}
           showPersons={this.state.showPersons}
-          persons={this.state.persons}
+          personsLength={this.state.persons.personsLength}
           clicked={this.togglePersonsHandler} />
         ) : null }
         { persons }
